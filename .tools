@@ -1,0 +1,35 @@
+TOOLS_DIR="~/tools"
+
+JAVA8_URL="http://download.oracle.com/otn-pub/java/jdk/8u60-b27/jdk-8u60-linux-x64.tar.gz"
+JAVA_URL=$JAVA8_URL
+MAVEN_URL=http://ftp.piotrkosoft.net/pub/mirrors/ftp.apache.org/maven/maven-3/3.3.3/binaries/apache-maven-3.3.3-bin.tar.gz
+
+############################################
+
+install-tools-java() {
+	TMPFILE="/tmp/java.tar.gz"
+	echo "Installing JDK from ${JAVA_URL}..."
+	mkdir -p $TOOLS_DIR
+	cd /tmp && curl -L -H "Cookie: oraclelicense=accept-securebackup-cookie" -k ${JAVA_URL} -o ${TMPFILE} && cd -
+	tar -C ${TOOLS_DIR} -zxvf ${TMPFILE}
+	grep -q JAVA_HOME ~/.bash_profile || echo "export JAVA_HOME=\"${TOOLS_DIR}/$(tar tf ${TMPFILE} | head -1 | cut -d/ -f1 )\"" >> ~/.bash_profile
+  grep -q PATH ~/.bash_profile | grep -q JAVA_HOME || echo 'export PATH="$JAVA_HOME/bin/:$PATH"' >> ~/.bash_profile 
+	rm ${TMPFILE}
+}
+
+install-tools-maven() {
+	TMPFILE="/tmp/maven.tar.gz"
+	echo "Installing Maven from ${MAVEN_URL}..."
+	mkdir -p $TOOLS_DIR
+	cd /tmp && curl -L -H "Cookie: oraclelicense=accept-securebackup-cookie" -k ${MAVEN_URL} -o ${TMPFILE} && cd -
+	tar -C ${TOOLS_DIR} -zxvf ${TMPFILE}
+	grep -q MAVEN_HOME ~/.bash_profile || echo "MAVEN_HOME=\"${TOOLS_DIR}/$(tar tf ${TMPFILE} | head -1 | cut -d/ -f1 )\"" >> ~/.bash_profile
+  grep -q PATH ~/.bash_profile | grep -q MAVEN_HOME || echo 'export PATH="$MAVEN_HOME/bin/:$PATH"' >> ~/.bash_profile 
+	rm ${TMPFILE}
+}
+
+install-tools(){
+	install-tools-java
+	install-tools-maven
+}
+				
