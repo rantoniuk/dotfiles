@@ -1,2 +1,0 @@
-echo "Setting up docker-machine default"
-eval "$(docker-machine env default)"
