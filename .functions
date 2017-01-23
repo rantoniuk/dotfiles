@@ -252,3 +252,11 @@ function o() {
 function tre() {
 	tree -aC -I '.git|node_modules|bower_components' --dirsfirst "$@" | less -FRNX;
 }
+
+# Rename OpenSSL CSR file to <CN>.csr
+function ssl_rename_csr(){
+  FILE=$1;
+  CN=$(openssl req -in $FILE -noout -subject |  sed -r 's/[[:alnum:]]+=/\n&/g' | awk -F= '$1=="CN"{print $2}' | tr " " "_");
+  mv "$FILE" "$CN.csr"; 
+}
+
