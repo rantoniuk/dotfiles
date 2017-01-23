@@ -149,3 +149,8 @@ alias afk="/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resource
 
 # Reload the shell (i.e. invoke as a login shell)
 alias reload="exec $SHELL -l"
+
+
+## GIT
+alias git-parent-branch="current_branch=`git rev-parse --abbrev-ref HEAD` git show-branch -a | ack '\*' | ack -v "$current_branch" | head -n1 |  sed 's/.*\[\(.*\)\].*/\1/' | sed 's/[\^~].*//'"
+
