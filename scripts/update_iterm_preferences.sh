@@ -1,0 +1,1 @@
+plutil -convert xml1 iterm2.preferences
