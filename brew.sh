@@ -101,5 +101,10 @@ brew install vbindiff
 brew install webkit2png
 brew install zopfli
 
+# cloud tools
+brew install azure-cli
+brew install kubectx
+brew install kube-ps1
+
 # Remove outdated versions from the cellar.
 brew cleanup
