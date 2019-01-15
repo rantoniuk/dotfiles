@@ -106,5 +106,9 @@ brew install azure-cli
 brew install kubectx
 brew install kube-ps1
 
+brew install fzf
+$(brew --prefix)/opt/fzf/install
+
+
 # Remove outdated versions from the cellar.
 brew cleanup
