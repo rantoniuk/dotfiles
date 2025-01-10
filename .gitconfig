@@ -2,8 +2,8 @@
 
 	# View abbreviated SHA, description, and history graph of the latest 20 commits
 	l = log --pretty=oneline -n 20 --graph --abbrev-commit
-  changelog = !"git log --pretty=oneline --abbrev-commit $(git describe --tags --abbrev=0).."
-  lpo = log --pretty=oneline
+	changelog = !"git log --pretty=oneline --abbrev-commit $(git describe --tags --abbrev=0).."
+	lpo = log --pretty=oneline
 
 	# View the current working tree status using the short format
 	s = status -s
@@ -83,6 +83,8 @@
 			git commit --amend -m \"$(git log -1 --pretty=%B)\n\nCloses #$1.\"; \
 		fi \
 	}; f"
+
+	merge-into = "!sh -c '_CURRENT_BRANCH=$(git symbolic-ref --short HEAD) && git checkout $1 && git merge $_CURRENT_BRANCH' -"
 
 	# Show the user email for the current repository.
 	whoami = config user.email

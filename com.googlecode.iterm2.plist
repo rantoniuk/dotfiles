@@ -609,7 +609,9 @@
 				<real>0.15686270594596863</real>
 			</dict>
 			<key>Background Image Location</key>
-			<string></string>
+			<string>/Users/warden/Pictures/Teams backgrounds/warrior1.jpg</string>
+			<key>Background Image Mode</key>
+			<integer>2</integer>
 			<key>Badge Color</key>
 			<dict>
 				<key>Alpha Component</key>
@@ -623,6 +625,8 @@
 				<key>Red Component</key>
 				<real>1</real>
 			</dict>
+			<key>Blend</key>
+			<real>0.25171477603216241</real>
 			<key>Blinking Cursor</key>
 			<true/>
 			<key>Blur</key>
@@ -770,7 +774,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>MartianMonoNF-Reg 15</string>
+			<string>CommitMonoNF-Regular 16</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
@@ -974,7 +978,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Transparency</key>
-			<real>0.15217124048223346</real>
+			<real>0.070213232669733477</real>
 			<key>Unlimited Scrollback</key>
 			<false/>
 			<key>Use Bold Font</key>
@@ -986,7 +990,7 @@
 			<key>Use Non-ASCII Font</key>
 			<false/>
 			<key>Vertical Spacing</key>
-			<real>1</real>
+			<real>1.1499999999999999</real>
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
