@@ -198,3 +198,5 @@
 [init]
 
 	templateDir = ~/.config/git/template/
+[submodule]
+	recurse = true
